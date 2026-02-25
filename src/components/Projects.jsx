@@ -41,14 +41,6 @@ const projects = [
     desc: "Interactive web-based diabetes prediction using ML algorithms.",
     img: "/projects/diabetes.png",
   },
-  {
-    title: "Movie Recommendation System",
-    repo: "https://github.com/Saksham-Khanna/movie-rec-sys",
-    live: "",
-    tech: "Python, Pandas, KNN",
-    desc: "Personalized movie recommendations based on user preferences.",
-    img: "/projects/movie.png",
-  },
 ];
 
 export default function Projects() {
