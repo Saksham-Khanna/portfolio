@@ -7,7 +7,7 @@ const projects = [
     live: "https://ezzchat.onrender.com",
     tech: "Reactjs, Node.js and Express, Socket.io",
     desc: "A modern real-time communication platform that features secure instant messaging, P2P voice and video calls, and innovative proximity-based user discovery.",
-    img: "/projects/ezchat.png",
+    img: "/projects/ezchat1.png",
   },
   {
     title: "Cricket Player Prediction",
