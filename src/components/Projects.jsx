@@ -2,12 +2,20 @@ import React, { useState } from "react";
 
 const projects = [
   {
-    title: "Breast Cancer Prediction",
-    repo: "https://github.com/Saksham-Khanna/Breast-Cancer-pred",
+    title: "EZ CHAT",
+    repo: "https://github.com/Saksham-Khanna/ezchat",
+    live: "https://ezzchat.onrender.com",
+    tech: "Reactjs, Node.js and Express, Socket.io",
+    desc: "A modern real-time communication platform that features secure instant messaging, P2P voice and video calls, and innovative proximity-based user discovery.",
+    img: "/projects/ezchat.png",
+  },
+  {
+    title: "Cricket Player Prediction",
+    repo: "https://github.com/Saksham-Khanna/Cricket-Pred-App",
     live: "",
-    tech: "Python, Machine Learning, Flask",
-    desc: "Machine learning model to diagnose breast cancer from cell data.",
-    img: "/projects/breast_cancer.png",
+    tech: "Streamlit, Machine Learning",
+    desc: "Interactive web-based IPL player selection and performance comparison system powered by data-driven scoring.",
+    img: "/projects/cricket.png",
   },
   {
     title: "Learning Management Platform",
@@ -26,12 +34,12 @@ const projects = [
     img: "/projects/ats.png",
   },
   {
-    title: "Cricket Player Prediction",
-    repo: "https://github.com/Saksham-Khanna/Cricket-Pred-App",
+    title: "Breast Cancer Prediction",
+    repo: "https://github.com/Saksham-Khanna/Breast-Cancer-pred",
     live: "",
-    tech: "Streamlit, Machine Learning",
-    desc: "Interactive web-based IPL player selection and performance comparison system powered by data-driven scoring.",
-    img: "/projects/cricket.png",
+    tech: "Python, Machine Learning, Flask",
+    desc: "Machine learning model to diagnose breast cancer from cell data.",
+    img: "/projects/breast_cancer.png",
   },
   {
     title: "Diabetes Prediction",
@@ -41,6 +49,7 @@ const projects = [
     desc: "Interactive web-based diabetes prediction using ML algorithms.",
     img: "/projects/diabetes.png",
   },
+  
 ];
 
 export default function Projects() {
