@@ -10,13 +10,21 @@ const projects = [
     img: "/projects/ezchat1.png",
   },
   {
+    title: "ATS Tracker App - ResuMatch",
+    repo: "https://github.com/Saksham-Khanna/ResuMatch",
+    live: "https://resu-match.onrender.com/",
+    tech: "MERN, AI, Docker",
+    desc: "A containerized AI-powered full-stack platform that uses LLMs to provide precision ATS scoring, real-time skill-gap visualization, and personalized career success roadmaps.",
+    img: "/projects/resumatch.png",
+  },
+  {
     title: "Cricket Player Prediction",
     repo: "https://github.com/Saksham-Khanna/Cricket-Pred-App",
     live: "",
     tech: "Streamlit, Machine Learning",
     desc: "Interactive web-based IPL player selection and performance comparison system powered by data-driven scoring.",
     img: "/projects/cricket.png",
-  },
+  }, 
   {
     title: "Learning Management Platform",
     repo: "https://github.com/Saksham-Khanna/Learning-Management-Platform",
@@ -24,14 +32,6 @@ const projects = [
     tech: "React, Node.js, Express, MongoDB",
     desc: "A complete LMS platform with authentication & course management.",
     img: "/projects/lms.png",
-  },
-  {
-    title: "ATS Tracker App",
-    repo: "https://github.com/Saksham-Khanna/ATS-tracker",
-    live: "",
-    tech: "Python, NLP, Tkinter",
-    desc: "ATS-based resume tracking system to optimize resume compatibility.",
-    img: "/projects/ats.png",
   },
   {
     title: "Breast Cancer Prediction",
