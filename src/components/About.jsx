@@ -1,121 +1,102 @@
+import { motion } from "framer-motion";
+import { User, Code2, BrainCircuit, Rocket } from "lucide-react";
+
 export default function About() {
   return (
-    <section
-      id="about"
-      className="container py-5"
-      style={{ scrollMarginTop: "100px" }}
-    >
-      {/* SECTION TITLE */}
-      <h2
-        className="section-title text-center"
-        data-aos="fade-up"
-        style={{ color: "#001E3C" }}
-      >
-        About <span style={{ color: "#FF6A3D" }}>Me</span>
-      </h2>
-
-      <div className="row align-items-center mt-5">
+    <section id="about" className="container py-5" style={{ minHeight: "80vh", display: "flex", alignItems: "center" }}>
+      <div className="row align-items-center g-5">
         {/* LEFT IMAGE */}
-        <div className="col-md-5 text-center" data-aos="fade-right">
-          <div
-            className="about-img-container"
-            style={{
-              background: "linear-gradient(135deg, #FFB68E, #FF6A3D)",
-              padding: "20px",
-              borderRadius: "50%",
-              display: "inline-block",
-              boxShadow: "0 18px 34px rgba(0,0,0,0.2)",
-            }}
-          >
-            <img
-              src="/contact.jpg"
-              alt="about-profile"
-              className="about-img"
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="col-lg-5 text-center"
+        >
+          <div className="position-relative d-inline-block">
+             <div className="hero-glow" style={{ top: "0", left: "0", width: "100%", height: "100%", opacity: 0.2 }} />
+             <div
+              className="about-img-container shadow-2xl"
               style={{
-                width: "250px",
-                height: "250px",
-                borderRadius: "50%",
-                border: "6px solid white",
-                objectFit: "cover",
+                background: "var(--accent-glow)",
+                padding: "12px",
+                borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
+                display: "inline-block",
+                overflow: "hidden"
               }}
-            />
+            >
+              <img
+                src="/contact.jpg"
+                alt="about-profile"
+                className="about-img"
+                style={{
+                  width: "min(320px, 70vw)",
+                  height: "min(320px, 70vw)",
+                  borderRadius: "inherit",
+                  objectFit: "cover",
+                  filter: "contrast(1.1)"
+                }}
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT CONTENT */}
-        <div
-          className="col-md-7"
-          data-aos="fade-left"
-          style={{
-            background: "#FFF5ED",
-            padding: "35px",
-            borderRadius: "20px",
-            boxShadow: "0 12px 24px rgba(0,0,0,0.08)",
-          }}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="col-lg-7"
         >
-          {/* Orange Header */}
-          <span
-            style={{
-              background: "#FF6A3D",
-              color: "white",
-              padding: "6px 16px",
-              borderRadius: "20px",
-              fontSize: "14px",
-              fontWeight: "600",
-            }}
-          >
-            Summary
-          </span>
+          <div className="glass-panel p-5 rounded-4 position-relative overflow-hidden" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-mid)" }}>
+             <div className="position-absolute top-0 end-0 p-4 opacity-10">
+               <User size={120} />
+             </div>
+             
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="badge mb-3"
+              style={{ background: "rgba(255, 106, 61, 0.1)", color: "var(--primary)", border: "1px solid rgba(255, 106, 61, 0.2)" }}
+            >
+              Summary
+            </motion.span>
 
-          <h3 className="mt-3 fw-bold" style={{ color: "#001E3C" }}>
-            Myself <span style={{ color: "#FF6A3D" }}>Sakshamm Vipul Khanna</span>
-          </h3>
+            <h3 className="fw-bold mb-4" style={{ fontSize: "32px" }}>
+              I'm <span className="text-gradient">Sakshamm Khanna</span>
+            </h3>
 
-          {/* Updated summary */}
-          <p
-            className="mt-3"
-            style={{
-              fontSize: "17px",
-              lineHeight: "1.7",
-              color: "#003566",
-            }}
-          >
-            A <strong>Full Stack Developer</strong> and
-            <strong> AI/ML enthusiast</strong> passionate about creating impactful
-            digital experiences and intelligent applications. I combine modern web
-            development with data-driven insights to build scalable, user-friendly
-            solutions.
-          </p>
+            <p className="lead mb-4" style={{ color: "var(--text-main)", fontSize: "18px", lineHeight: "1.8" }}>
+              A <strong className="text-white">Full Stack Developer</strong> and 
+              <strong className="text-white"> AI/ML enthusiast</strong> passionate about creating impactful digital experiences and intelligent applications. I combine modern web development with data-driven insights to build scalable, user-friendly solutions.
+            </p>
 
-          <p
-            style={{
-              fontSize: "17px",
-              lineHeight: "1.7",
-              color: "#003566",
-            }}
-          >
-            I’ve worked on projects spanning <strong>React</strong>,
-            <strong>Node.js</strong>, <strong>Python</strong>,
-            <strong>Machine Learning</strong>, and <strong>MongoDB</strong> — with a
-            strong focus on intuitive UI, backend logic, and efficient workflows.
-          </p>
+            <div className="row g-4 mb-4">
+              {[
+                { icon: <Code2 size={20} />, text: "Full Stack Development" },
+                { icon: <BrainCircuit size={20} />, text: "AI & Machine Learning" },
+                { icon: <Rocket size={20} />, text: "Scalable Architecture" },
+              ].map((item, i) => (
+                <div key={i} className="col-sm-6">
+                  <div className="d-flex align-items-center gap-3">
+                    <div style={{ color: "var(--primary)", opacity: 0.9 }}>{item.icon}</div>
+                    <span style={{ fontSize: "15px", color: "var(--text-sub)", fontWeight: 500 }}>{item.text}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-          {/* Skill Highlights */}
-          <ul className="mt-3" style={{ color: "#001E3C", fontSize: "16px" }}>
-            <li>Full Stack web apps with React & Node.js</li>
-            <li>Machine Learning and data analysis using Python</li>
-            <li>Strong understanding of MongoDB, REST APIs & backend systems</li>
-            <li>Experience with modern UI/UX, animations & responsive design</li>
-          </ul>
-
-          <a
-            href="#contact"
-            className="btn-gradient mt-4 d-inline-block text-decoration-none"
-            style={{ fontSize: "16px" }}
-          >
-            Contact Me
-          </a>
-        </div>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#contact"
+              className="btn-gradient text-decoration-none px-5"
+            >
+              Get In Touch
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

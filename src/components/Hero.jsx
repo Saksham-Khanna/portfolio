@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   const roles = [
@@ -11,156 +13,206 @@ export default function Hero() {
   ];
 
   const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
 
-  /* Typing Effect */
   useEffect(() => {
-    if (subIndex === roles[index].length + 1 && !isDeleting) {
-      setTimeout(() => setIsDeleting(true), 800);
-      return;
-    }
-
-    if (subIndex === 0 && isDeleting) {
-      setIsDeleting(false);
+    const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % roles.length);
-      return;
-    }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
-    const timeout = setTimeout(
-      () => {
-        setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
-      isDeleting ? 60 : 110
-    );
+    },
+  };
 
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, isDeleting]);
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
 
   return (
     <section
       id="home"
-      className="container py-5 d-flex align-items-center justify-content-between"
-      style={{ marginTop: "130px", position: "relative" }}
+      className="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between min-vh-100"
+      style={{ position: "relative", zIndex: 1 }}
     >
-      {/* Floating Background Circles */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-100px",
-          left: "-120px",
-          width: "350px",
-          height: "350px",
-          borderRadius: "50%",
-          background: "rgba(255,106,61,0.28)",
-          filter: "blur(80px)",
-          zIndex: "-1",
-        }}
-      ></div>
-
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-120px",
-          right: "-100px",
-          width: "300px",
-          height: "300px",
-          borderRadius: "50%",
-          background: "rgba(0,30,60,0.25)",
-          filter: "blur(80px)",
-          zIndex: "-1",
-        }}
-      ></div>
+      {/* Cinematic Background Elements */}
+      <div className="hero-glow" style={{ top: "-10%", left: "-10%", opacity: 0.4 }} />
+      <div className="hero-glow" style={{ bottom: "-10%", right: "-10%", opacity: 0.3, background: "radial-gradient(circle, var(--secondary) 0%, transparent 70%)" }} />
 
       {/* LEFT TEXT SECTION */}
-      <div data-aos="fade-right">
-        <p
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="col-lg-7 text-center text-lg-start"
+      >
+        <motion.div variants={itemVariants} className="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3">
+          <motion.span
+            animate={{ boxShadow: ["0 0 0px rgba(255,106,61,0.3)", "0 0 16px rgba(255,106,61,0.5)", "0 0 0px rgba(255,106,61,0.3)"] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "8px 18px",
+              borderRadius: "100px",
+              background: "rgba(255, 106, 61, 0.12)",
+              border: "1px solid rgba(255, 106, 61, 0.35)",
+              fontSize: "14px",
+              fontWeight: 600,
+              color: "#ffb68e",
+              letterSpacing: "0.3px",
+            }}
+          >
+            {/* Pulsing green live dot */}
+            <span style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+              <motion.span
+                animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                style={{
+                  position: "absolute",
+                  width: "8px", height: "8px",
+                  borderRadius: "50%",
+                  background: "#22c55e",
+                }}
+              />
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e", display: "block" }} />
+            </span>
+            Open for opportunities
+          </motion.span>
+        </motion.div>
+
+        <motion.p
+          variants={itemVariants}
           style={{
             fontSize: "18px",
             fontWeight: "600",
-            color: "#FF6A3D",
-            letterSpacing: "2px",
+            color: "var(--primary)",
+            letterSpacing: "4px",
             textTransform: "uppercase",
           }}
         >
           Hey there! 👋
-        </p>
+        </motion.p>
 
-        <h1
+        <motion.h1
+          variants={itemVariants}
           className="fw-bold"
-          style={{ fontSize: "54px", lineHeight: "1.25", color: "#001E3C" }}
+          style={{ fontSize: "clamp(44px, 7.5vw, 72px)", lineHeight: "1.1", letterSpacing: "-0.03em" }}
         >
-          I'm <span style={{ color: "#FF6A3D" }}>Sakshamm</span>
-          <br />a{" "}
-          <span style={{ color: "#FF6A3D" }}>
-            {roles[index].substring(0, subIndex)}
-          </span>
-          <span style={{ color: "#FF6A3D" }}>|</span>
-        </h1>
+          <span style={{ color: "var(--text-main)" }}>I'm </span>
+          <span className="text-gradient">Sakshamm</span>
+          <br />
+          <div style={{ height: "1.2em", display: "inline-flex", alignItems: "center", gap: "12px", marginTop: "4px" }}>
+            <span style={{ color: "var(--text-sub)", fontSize: "0.78em", fontWeight: 500 }}>a</span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roles[index]}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.5, ease: "circOut" }}
+                className="text-gradient"
+              >
+                {roles[index]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+        </motion.h1>
 
-        <p
-          className="mt-3"
+        <motion.p
+          variants={itemVariants}
+          className="mt-4"
           style={{
-            fontSize: "18px",
-            width: "92%",
-            color: "#003566",
-            lineHeight: "1.65",
+            fontSize: "19px",
+            maxWidth: "600px",
+            color: "var(--text-muted)",
+            lineHeight: "1.7",
           }}
         >
           I craft efficient and scalable digital experiences spanning web
           development, data-driven applications, full stack systems, and
           intelligent ML-powered solutions.
-        </p>
+        </motion.p>
 
-        {/* ALWAYS line under description */}
-        <p
-          style={{
-            fontWeight: "700",
-            fontSize: "18px",
-            marginTop: "8px",
-            color: "#001E3C",
-          }}
-        >
-          <strong>ALWAYS ➤ BUILDING & LEARNING</strong>
-        </p>
-
-        <a
-          href="#about"
-          className="btn-gradient mt-4 d-inline-block text-decoration-none"
-          style={{
-            padding: "12px 35px",
-            fontSize: "17px",
-            borderRadius: "30px",
-          }}
-        >
-          Explore More
-        </a>
-      </div>
+        <motion.div variants={itemVariants} className="mt-5 d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="#projects"
+            className="btn-gradient text-decoration-none"
+          >
+            View Projects <ArrowRight size={18} className="ms-2" />
+          </motion.a>
+          
+          <motion.a
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
+            whileTap={{ scale: 0.95 }}
+            href="#contact"
+            className="btn glass-panel text-white text-decoration-none"
+            style={{ padding: "14px 36px", borderRadius: "12px", fontWeight: "600" }}
+          >
+            Let's Talk
+          </motion.a>
+        </motion.div>
+      </motion.div>
 
       {/* RIGHT IMAGE SECTION */}
-      <div
-        data-aos="fade-left"
-        className="about-img-container"
-        style={{
-          padding: "20px",
-          borderRadius: "50%",
-          background: "linear-gradient(135deg, #FFB68E, #FF6A3D)",
-          boxShadow: "0 22px 40px rgba(0,0,0,0.25)",
-        }}
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0, rotate: 5 }}
+        animate={{ scale: 1, opacity: 1, rotate: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+        className="col-lg-5 mt-5 mt-lg-0 d-flex justify-content-center"
       >
-        <img
-          src="/profile.jpg"
-          className="about-img"
-          alt="profile"
+        <div
+          className="about-img-container"
           style={{
-            width: "320px",
-            height: "320px",
-            objectFit: "cover",
-            borderRadius: "50%",
-            border: "8px solid white",
+            position: "relative",
+            padding: "15px",
+            borderRadius: "40px",
+            background: "rgba(255, 106, 61, 0.1)",
+            border: "1px solid rgba(255, 106, 61, 0.2)",
           }}
-        />
-      </div>
+        >
+          {/* Animated decorative ring */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{
+              position: "absolute",
+              inset: "-5px",
+              borderRadius: "45px",
+              border: "2px dashed rgba(255, 106, 61, 0.3)",
+              zIndex: -1,
+            }}
+          />
+          
+          <img
+            src="/profile.jpg"
+            className="about-img shadow-2xl"
+            alt="profile"
+            style={{
+              width: "min(350px, 80vw)",
+              height: "min(350px, 80vw)",
+              objectFit: "cover",
+              borderRadius: "32px",
+              filter: "grayscale(10%) contrast(1.1)",
+            }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
