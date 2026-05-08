@@ -60,7 +60,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              fontSize: "28px",
+              fontSize: "34px",
               fontWeight: 800,
               letterSpacing: "-0.04em",
               background: "linear-gradient(135deg, #ff6a3d, #ffb68e)",
@@ -140,17 +140,17 @@ export default function Navbar() {
                   borderRadius: "50%",
                   background: "linear-gradient(135deg, var(--primary), transparent)",
                   padding: "2px",
-                  opacity: 0.7,
+                  opacity: 0.3,
                 }} />
                 <img
                   src={profileImg}
                   alt="Profile"
                   style={{
-                    width: "38px",
-                    height: "38px",
+                    width: "48px",
+                    height: "48px",
                     borderRadius: "50%",
                     objectFit: "cover",
-                    border: "2px solid rgba(255,106,61,0.5)",
+                    border: "1px solid rgba(255,106,61,0.2)",
                     display: "block",
                   }}
                 />

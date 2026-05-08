@@ -151,7 +151,7 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#projects"
+            href="#work"
             className="btn-gradient text-decoration-none"
           >
             View Projects <ArrowRight size={18} className="ms-2" />

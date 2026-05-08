@@ -13,15 +13,15 @@ export default function Education() {
     {
       title: "Chandigarh University",
       subtitle: "B.E. Computer Science Engineering",
-      desc: "Specialization: AI & ML",
+      desc: "Specialization: AI & ML | 7.15 CGPA",
       date: "2023 - 2027",
       side: "right"
     },
     {
       title: "Intermediate",
-      subtitle: "BMS, Narela",
+      subtitle: "Bharat Mata Saraswati Mandir, Narela",
       desc: "CBSE Board | 72%",
-      date: "2021 - 2023",
+      date: "2022 - 2023",
       side: "left"
     },
     {
@@ -121,7 +121,7 @@ export default function Education() {
         }
         .edu-item.left {
           padding-right: 50px;
-          text-align: right;
+          text-align: left;
         }
         .edu-item.right {
           padding-left: 50px;

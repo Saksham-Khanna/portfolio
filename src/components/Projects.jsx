@@ -76,7 +76,7 @@ const ProjectCard = ({ project, index }) => {
               backgroundImage: `url(${project.img || "/projects/default.jpg"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              height: "220px",
+              height: project.size === "large" ? "300px" : "220px",
             }}
           />
           <div className="project-overlay glass-panel d-flex align-items-center justify-content-center gap-3">
@@ -139,8 +139,7 @@ const ProjectCard = ({ project, index }) => {
 };
 
 export default function Projects() {
-  const [showAll, setShowAll] = useState(false);
-  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+  const visibleProjects = projects;
 
   return (
     <section id="work" className="container py-5" style={{ minHeight: "100vh" }}>
@@ -165,36 +164,29 @@ export default function Projects() {
         ))}
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="text-center mt-5"
-      >
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="btn-gradient border-0 px-5 py-3"
-          style={{ borderRadius: "100px" }}
-        >
-          {showAll ? "Show Less" : "View All Projects"}
-        </button>
-      </motion.div>
+      {/* Section removed to show all projects by default */}
 
       <style dangerouslySetInnerHTML={{ __html: `
         .project-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 1.5rem;
+          grid-auto-flow: dense;
         }
         @media (min-width: 992px) {
           .project-grid {
             grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
           }
           .project-card-wrapper.large {
             grid-column: span 2;
           }
+          .project-card-wrapper.medium {
+            grid-column: span 1;
+          }
         }
         .project-img-wrapper {
-          height: 220px;
+          width: 100%;
           border-bottom: 1px solid var(--border-light);
         }
         .project-img {

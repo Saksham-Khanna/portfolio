@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link2, Mail, Send, MessageSquare } from "lucide-react";
+import { Linkedin, Mail, Send, MessageSquare } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -52,8 +52,12 @@ export default function Contact() {
                  <MessageSquare size={28} />
                </div>
                <div>
-                 <h2 className="m-0 fw-bold" style={{ fontSize: "32px" }}>Let's <span className="text-gradient">Connect</span></h2>
-                 <p style={{ color: "var(--text-sub)", margin: 0, fontSize: "15px", marginTop: "4px" }}>I'm always open to new opportunities and collaborations.</p>
+                  <h2 className="m-0 fw-bold" style={{ fontSize: "clamp(32px, 4vw, 44px)", letterSpacing: "-0.02em" }}>
+                    Let's <span className="text-gradient">Connect</span>
+                  </h2>
+                 <p className="mt-2" style={{ color: "var(--text-sub)", margin: 0, fontSize: "16px" }}>
+                   I'm always open to new opportunities and collaborations.
+                 </p>
                </div>
             </div>
 
@@ -61,7 +65,7 @@ export default function Contact() {
               {[
                 { 
                   name: "LinkedIn", 
-                  icon: <Link2 size={22} />, 
+                  icon: <Linkedin size={22} />, 
                   href: "https://www.linkedin.com/in/sakshamm-khanna29/",
                   color: "#0077b5"
                 },

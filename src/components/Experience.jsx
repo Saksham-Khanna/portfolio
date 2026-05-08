@@ -122,18 +122,18 @@ export default function Experience() {
         }
         .exp-item.left {
           padding-right: 50px;
-          text-align: right;
+          text-align: left;
         }
         .exp-item.right {
           padding-left: 50px;
           margin-left: 50%;
         }
         .exp-item.left .exp-points li {
-          justify-content: flex-end;
-          text-align: right;
+          justify-content: flex-start;
+          text-align: left;
         }
         .exp-item.left .exp-points li div {
-          order: 2;
+          order: -1;
         }
         @media (max-width: 768px) {
           .exp-line {
