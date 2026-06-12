@@ -113,10 +113,10 @@ export default function Hero() {
           style={{ fontSize: "clamp(44px, 7.5vw, 72px)", lineHeight: "1.1", letterSpacing: "-0.03em" }}
         >
           <span style={{ color: "var(--text-main)" }}>I'm </span>
-          <span className="text-gradient">Sakshamm</span>
+          <span className="text-gradient">Sakshamm Khanna</span>
           <br />
-          <div style={{ height: "1.2em", display: "inline-flex", alignItems: "center", gap: "12px", marginTop: "4px" }}>
-            <span style={{ color: "var(--text-sub)", fontSize: "0.78em", fontWeight: 500 }}>a</span>
+          <span style={{ color: "var(--text-sub)", fontSize: "0.6em", fontWeight: 500, display: "block", marginTop: "16px", marginBottom: "8px", letterSpacing: "normal" }}>an aspiring</span>
+          <div style={{ height: "1.2em", display: "inline-flex", alignItems: "center" }}>
             <AnimatePresence mode="wait">
               <motion.span
                 key={roles[index]}

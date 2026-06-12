@@ -29,13 +29,14 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home",       id: "home" },
-    { name: "About",      id: "about" },
-    { name: "Skills",     id: "skills" },
-    { name: "Work",       id: "work" },
-    { name: "Experience", id: "experience" },
-    { name: "Education",  id: "education" },
-    { name: "Contact",    id: "contact" },
+    { name: "Home",          id: "home" },
+    { name: "About",         id: "about" },
+    { name: "Skills",        id: "skills" },
+    { name: "Work",          id: "work" },
+    { name: "Experience",    id: "experience" },
+    { name: "Education",     id: "education" },
+    { name: "Certification", id: "certifications" },
+    { name: "Contact",       id: "contact" },
   ];
 
   return (

@@ -6,38 +6,56 @@ const skillCategories = [
     label: "Frontend",
     skills: [
       { name: "ReactJS",     img: "/skills/react.png" },
+      { name: "Next.js",     img: "/skills/nextjs.png" },
       { name: "JavaScript",  img: "/skills/js.png" },
       { name: "HTML5",       img: "/skills/html.png" },
       { name: "CSS3",        img: "/skills/css.png" },
       { name: "TailwindCSS", img: "/skills/tailwind.png" },
+      { name: "Framer Motion", img: "/skills/framer-motion.png" },
     ]
   },
   {
     label: "Backend & DB",
     skills: [
-      { name: "NodeJS",   img: "/skills/node.png" },
-      { name: "Spring",   img: "/skills/spring.png" },
-      { name: "MongoDB",  img: "/skills/mongodb.png" },
-      { name: "MySQL",    img: "/skills/mysql.png" },
-      { name: "Firebase", img: "/skills/firebase.png" },
+      { name: "NodeJS",      img: "/skills/node.png" },
+      { name: "Express.js",  img: "/skills/express.png" },
+      { name: "Spring",      img: "/skills/spring.png" },
+      { name: "MongoDB",     img: "/skills/mongodb.png" },
+      { name: "PostgreSQL",  img: "/skills/postgres.png" },
+      { name: "MySQL",       img: "/skills/mysql.png" },
+      { name: "Redis",       img: "/skills/redis.png" },
+      { name: "Firebase",    img: "/skills/firebase.png" },
+      { name: "Socket.IO",   img: "/skills/socketio.png" },
     ]
   },
   {
     label: "Languages",
     skills: [
-      { name: "Python",     img: "/skills/python.png" },
-      { name: "Java",       img: "/skills/java.png" },
-      { name: "C++",        img: "/skills/cpp.png" },
-      { name: "Streamlit",  img: "/skills/streamlit.png" },
+      { name: "Python",           img: "/skills/python.png" },
+      { name: "Java",             img: "/skills/java.png" },
+      { name: "C++",              img: "/skills/cpp.png" },
+      { name: "JavaScript (ES6+)",img: "/skills/js.png" },
     ]
   },
   {
-    label: "Tools & Cloud",
+    label: "ML & AI",
     skills: [
-      { name: "Git",     img: "/skills/git.png" },
-      { name: "GitHub",  img: "/skills/github.png" },
-      { name: "AWS",     img: "/skills/aws.png" },
-      { name: "VS Code", img: "/skills/vscode.png" },
+      { name: "scikit-learn",  img: "/skills/scikit-learn.png" },
+      { name: "XGBoost",       img: "/skills/xgboost.png" },
+      { name: "NLTK",          img: "/skills/nltk.png" },
+    ]
+  },
+  {
+    label: "Tools, Security & Cloud",
+    skills: [
+      { name: "Git",       img: "/skills/git.png" },
+      { name: "GitHub",    img: "/skills/github.png" },
+      { name: "AWS",       img: "/skills/aws.png" },
+      { name: "Azure",     img: "/skills/azure.png" },
+      { name: "Vercel",    img: "/skills/vercel.png" },
+      { name: "Netlify",   img: "/skills/netlify.png" },
+      { name: "VS Code",   img: "/skills/vscode.png" },
+      { name: "AES-256",   img: "/skills/256.png" },
     ]
   },
 ];

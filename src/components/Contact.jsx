@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Mail, Send, MessageSquare } from "lucide-react";
+import { Mail, Send, MessageSquare } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -52,7 +52,7 @@ export default function Contact() {
                  <MessageSquare size={28} />
                </div>
                <div>
-                  <h2 className="m-0 fw-bold" style={{ fontSize: "clamp(32px, 4vw, 44px)", letterSpacing: "-0.02em" }}>
+                  <h2 className="m-0 fw-bold text-white" style={{ fontSize: "clamp(32px, 4vw, 44px)", letterSpacing: "-0.02em" }}>
                     Let's <span className="text-gradient">Connect</span>
                   </h2>
                  <p className="mt-2" style={{ color: "var(--text-sub)", margin: 0, fontSize: "16px" }}>
@@ -65,7 +65,7 @@ export default function Contact() {
               {[
                 { 
                   name: "LinkedIn", 
-                  icon: <Linkedin size={22} />, 
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>, 
                   href: "https://www.linkedin.com/in/sakshamm-khanna29/",
                   color: "#0077b5"
                 },
@@ -102,7 +102,7 @@ export default function Contact() {
             <div className="mt-5 text-center">
                <p style={{ fontSize: "14px", color: "var(--text-sub)", lineHeight: 1.7 }}>
                  Based in Chandigarh, India. <br />
-                 Available for full-time roles &amp; freelance projects.
+                 Available for intern/full-time roles &amp; freelance projects - on-site and remote.
                </p>
             </div>
           </div>

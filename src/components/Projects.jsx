@@ -7,7 +7,7 @@ const projects = [
     title: "EZ CHAT",
     repo: "https://github.com/Saksham-Khanna/ezchat",
     live: "https://ezzchat.onrender.com",
-    tech: ["Reactjs", "Node.js", "Socket.io"],
+    tech: ["React 18", "Node.js", "Socket.io", "WebRTC", "JWT", "AES-256"],
     desc: "A modern real-time communication platform that features secure instant messaging, P2P voice and video calls, and innovative proximity-based user discovery.",
     img: "/projects/ezchat1.png",
     size: "large"
@@ -16,7 +16,7 @@ const projects = [
     title: "ResuMatch AI",
     repo: "https://github.com/Saksham-Khanna/ResuMatch",
     live: "https://resu-match.onrender.com/",
-    tech: ["MERN", "AI", "Docker"],
+    tech: ["Python", "NLP", "Scikit-learn", "NLTK", "TF-IDF"],
     desc: "AI-powered platform that uses LLMs to provide precision ATS scoring and real-time skill-gap visualization.",
     img: "/projects/resumatch.png",
     size: "medium"
@@ -25,7 +25,7 @@ const projects = [
     title: "Cricket Player Prediction",
     repo: "https://github.com/Saksham-Khanna/Cricket-Pred-App",
     live: "",
-    tech: ["Streamlit", "ML"],
+    tech: ["Python", "FastAPI", "Next.js", "Redis", "XGBoost"],
     desc: "Interactive IPL player selection system powered by data-driven scoring.",
     img: "/projects/cricket.png",
     size: "small"

@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Certifications from "./components/Certifications";
 import Lenis from "lenis";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -102,6 +103,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Education />
+        <Certifications />
         <Contact />
       </motion.main>
       
